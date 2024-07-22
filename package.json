@@ -1,0 +1,12 @@
+{
+  "name": "comment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+     "build": "cp -r * dist/ && rm -rf dist/node_modules dist/package.json dist/package-lock.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
