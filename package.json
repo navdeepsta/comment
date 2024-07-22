@@ -4,7 +4,7 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-     "build": "mkdir -p dist && cp -r * dist/ && rm -rf dist/node_modules dist/package.json dist/package-lock.json"
+      "build": "mkdir -p dist && find . -maxdepth 1 -mindepth 1 ! -name dist ! -name node_modules ! -name package.json ! -name package-lock.json -exec cp -r {} dist \\;"
   },
   "keywords": [],
   "author": "",
