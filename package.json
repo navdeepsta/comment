@@ -4,9 +4,16 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-      "build": "mkdir -p dist && find . -maxdepth 1 -mindepth 1 ! -name dist ! -name node_modules ! -name package.json ! -name package-lock.json -exec cp -r {} dist \\;"
+    "build": "mkdir -p dist && find . -maxdepth 1 -mindepth 1 ! -name dist ! -name node_modules ! -name package.json ! -name package-lock.json -exec cp -r {} dist \\;",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jsdom": "^24.1.1",
+    "util": "^0.12.5"
+  }
 }
