@@ -1,9 +1,20 @@
-
 function addComment(document, commentInput, commentList) {
     const commentText = commentInput.value.trim();
     if (commentText) {
         const listItem = document.createElement('li');
-        listItem.textContent = commentText;
+
+        const commentSpan = document.createElement('span');
+        commentSpan.textContent = commentText;
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.className = 'delete-button';
+        deleteButton.addEventListener('click', function() {
+            commentList.removeChild(listItem);
+        });
+
+        listItem.appendChild(commentSpan);
+        listItem.appendChild(deleteButton);
         commentList.appendChild(listItem);
         commentInput.value = '';
     }
