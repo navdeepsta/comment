@@ -39,7 +39,8 @@ describe('Comments App', () => {
         
         const listItem = commentList.querySelector('li');
         expect(listItem).not.toBeNull();
-        expect(listItem.textContent).toBe('This is a test comment');
+        const commentSpan = listItem.querySelector('span');
+        expect(commentSpan.textContent).toBe('This is a test comment');
     });
 
     test('should clear the input after adding a comment', () => {
@@ -50,5 +51,19 @@ describe('Comments App', () => {
         addComment(document, commentInput, commentList);
 
         expect(commentInput.value).toBe('');
+    });
+
+    test('should delete a comment from the list', () => {
+        const commentInput = document.getElementById('commentInput');
+        commentInput.value = 'Comment to delete';
+        const commentList = document.getElementById('commentList');
+        
+        addComment(document, commentInput, commentList);
+
+        const listItem = commentList.querySelector('li');
+        const deleteButton = listItem.querySelector('.delete-button');
+        deleteButton.click();
+
+        expect(commentList.querySelector('li')).toBeNull();
     });
 });
